@@ -1,0 +1,45 @@
+// Array to store strategies
+let strategies = [];
+
+// Form submission handler
+document.getElementById('strategyForm').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  // Get form values
+  const strategyName = document.getElementById('strategyName').value;
+  const entryRules = document.getElementById('entryRules').value;
+  const exitRules = document.getElementById('exitRules').value;
+
+  // Create a new strategy object
+  const newStrategy = {
+    id: Date.now(), // Unique ID
+    name: strategyName,
+    entry: entryRules,
+    exit: exitRules,
+  };
+
+  // Add the strategy to the array
+  strategies.push(newStrategy);
+
+  // Clear the form
+  document.getElementById('strategyForm').reset();
+
+  // Update the displayed strategies
+  displayStrategies();
+});
+
+// Function to display strategies
+function displayStrategies() {
+  const strategyList = document.getElementById('strategyList');
+  strategyList.innerHTML = ''; // Clear the list
+
+  strategies.forEach((strategy) => {
+    const li = document.createElement('li');
+    li.innerHTML = `
+      <h3>${strategy.name}</h3>
+      <p><strong>Entry Rules:</strong> ${strategy.entry}</p>
+      <p><strong>Exit Rules:</strong> ${strategy.exit}</p>
+    `;
+    strategyList.appendChild(li);
+  });
+}
