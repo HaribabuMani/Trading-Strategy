@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trading Strategy Website</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>My Trading Strategies</h1>
+
+    <!-- Form to Add a New Strategy -->
+    <div class="form-container">
+      <h2>Add a New Strategy</h2>
+      <form id="strategyForm">
+        <label for="strategyName">Strategy Name:</label>
+        <input type="text" id="strategyName" required>
+
+        <label for="entryRules">Entry Rules:</label>
+        <textarea id="entryRules" rows="4" required></textarea>
+
+        <label for="exitRules">Exit Rules:</label>
+        <textarea id="exitRules" rows="4" required></textarea>
+
+        <button type="submit">Add Strategy</button>
+      </form>
+    </div>
+
+    <!-- Display Saved Strategies -->
+    <div class="strategies-container">
+      <h2>Saved Strategies</h2>
+      <ul id="strategyList"></ul>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
